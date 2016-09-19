@@ -108,12 +108,14 @@ public class BilletautomatTest {
 	
 	@Test
 	public void testUdskrivBillet() {
+		int balanceFør = ba.getBalance();
+
 		ba.indsætPenge(10);
 		ba.udskrivBillet();
 		
 		ba.montørLogin("1234");
 		assertEquals(1, ba.getAntalBilletterSolgt());
-		assertEquals(0, ba.getBalance());
+		assertEquals(balanceFør, ba.getBalance());
 	}
 	
 	@Test
@@ -126,4 +128,32 @@ public class BilletautomatTest {
 		assertEquals(0, ba.getAntalBilletterSolgt());
 		assertEquals(0, ba.getBalance());
 	}
+	
+	@Test
+	public void testUdskrivBilletNyPris() {
+		ba.montørLogin("1234");
+		ba.setBilletpris(20);
+		
+		int balanceFør = ba.getBalance();
+		ba.indsætPenge(20);
+		assertEquals(balanceFør + 20, ba.getBalance());
+		ba.udskrivBillet();
+		assertEquals(balanceFør, ba.getBalance());
+	}
+	
+	@Test
+	public void testReturPenge() {
+		ba.indsætPenge(50);
+		int balance = ba.getBalance();
+		int retur = ba.returpenge();
+		
+		assertEquals(balance, retur);
+		assertEquals(0, ba.getBalance());
+	}
 }
+
+
+
+
+
+
