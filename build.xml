@@ -1,0 +1,9 @@
+<project>
+    <target name="test">
+        <delete dir="build" />
+
+        <mkdir dir="build" />
+        <javac includeantruntime="false" srcdir="src" destdir="build" />
+
+    </target>
+</project>
