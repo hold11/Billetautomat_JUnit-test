@@ -1,3 +1,15 @@
+/*
+ * Hold 11_Billetautomat_JUnit-test
+ * Hold 11 - 2016-09-20 - Version 1.0
+ * Java JDK 1.8.0_102
+ * Lavet af:
+ *    Anders Wiberg Olsen (s165241)
+ *    Iman Chelhi (s165228)
+ *    Troels Just Christoffersen (s120052)
+ *    Iman Chelhi (s165228)
+ *    Sebastian Tibor (s145918)
+ */
+
 package automat;
 
 import static org.junit.Assert.*;
